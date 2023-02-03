@@ -53,6 +53,8 @@ public class MainActivity extends AppCompatActivity {
     private void getWeb() {
         try {
             doc = Jsoup.connect("https://www.curs.md").get();
+            Log.d("DebugLog", "Table: " + doc);
+
             Elements cursBox = doc.getElementsByAttributeValue("id", "cursBox");
             Elements tableBody = cursBox.first().getElementsByTag("tbody");
             Element table = tableBody.get(0);
